@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater</title>
+</head>
+<style>
+    .conatiner {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 0 12px;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style-type: none;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        text-align: center;
+        padding: 23px;
+        background-color: skyblue;
+        color: white;
+    }
+
+    #clear {
+        width: 100%;
+        border: 3px solid gray;
+        border-radius: 9999px;
+        padding: 20px;
+        background-color: rgb(38, 221, 157);
+    }
+
+    .formstyle {
+        width: 300px;
+        height: 530px;
+        margin: auto;
+        border: 3px solid skyblue;
+        border-radius: 5px;
+        padding: 20px;
+    }
+
+
+
+    input {
+        width: 20px;
+        background-color: rgb(46, 79, 46);
+        color: white;
+        border: 3px solid gray;
+        border-radius: 5px;
+        padding: 26px;
+        margin: 5px;
+        font-size: 30px;
+    }
+
+    input.number {
+        height: 60px;
+        width: 60px;
+        padding: 0;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        border-radius: 9999px;
+        --tw-bg-opacity: 1;
+        background-color: rgb(80 80 80 / var(--tw-bg-opacity));
+        font-family: Poppins, sans-serif;
+        font-size: 32px;
+        font-weight: 500;
+        --tw-text-opacity: 1;
+        color: rgb(212 212 210 / var(--tw-text-opacity));
+        transition-duration: .3s;
+    }
+
+    input.opreator {
+        height: 60px;
+        width: 60px;
+        padding: 0;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 9999px;
+        --tw-bg-opacity: 1;
+        background-color: rgb(44, 177, 144);
+        font-family: Poppins, sans-serif;
+        font-size: 32px;
+        font-weight: 500;
+        --tw-text-opacity: 1;
+        color: rgb(212 212 210 / var(--tw-text-opacity));
+        transition-duration: .3s;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .justify-center {
+        justify-content: center;
+    }
+
+    .items-center {
+        align-items: center;
+    }
+
+    #calc {
+        border: 5px solid black;
+        border-radius: 9999px;
+        padding: 20px;
+        margin: auto;
+    }
+
+    .justify-between {
+        justify-content: space-between;
+    }
+
+    .w-full {
+        width: 100%;
+    }
+
+    .from {
+        border: 2px solid gray;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 0 12px 6px gray;
+    }
+
+    .min-h-screen {
+        min-height: 100vh;
+    }
+</style>
+
+<body>
+
+    <section class="min-h-screen flex justify-center items-center">
+        <div class="conatiner">
+            <form id="data" name="form1" class="from">
+                <!-- This input box shows the button pressed by the user in calculator. -->
+                <input id="calc" type="text" name="answer" class="w-full"> <br> <br>
+                <!-- Display the calculator button on the screen. -->
+                <!-- onclick() function display the number prsses by the user. -->
+                <div class=" flex items-center justify-between">
+                    <input class="number" type="button" value="1" onclick="form1.answer.value += '1' ">
+                    <input class="number" type="button" value="2" onclick="form1.answer.value += '2' ">
+                    <input class="number" type="button" value="3" onclick="form1.answer.value += '3' ">
+                    <input class="opreator" type="button" value="+" onclick="form1.answer.value += '+' ">
+                </div>
+                <br> <br>
+                <div class=" flex items-center justify-between">
+                    <input class="number" type="button" value="4" onclick="form1.answer.value += '4' ">
+                    <input class="number" type="button" value="5" onclick="form1.answer.value += '5' ">
+                    <input class="number" type="button" value="6" onclick="form1.answer.value += '6' ">
+                    <input class="opreator" type="button" value="-" onclick="form1.answer.value += '-' ">
+                </div>
+                <br> <br>
+                <div class=" flex items-center justify-between">
+                    <input class="number" type="button" value="7" onclick="form1.answer.value += '7' ">
+                    <input class="number" type="button" value="8" onclick="form1.answer.value += '8' ">
+                    <input class="number" type="button" value="9" onclick="form1.answer.value += '9' ">
+                    <input class="opreator" type="button" value="*" onclick="form1.answer.value += '*' ">
+                </div>
+                <br> <br>
+                <div class=" flex items-center justify-between">
+                    <input class="opreator" type="button" value="/" onclick="form1.answer.value += '/' ">
+                    <input class="number" type="button" value="0" onclick="form1.answer.value += '0' ">
+                    <input class="opreator" type="button" value="." onclick="form1.answer.value += '.' ">
+                    <!-- When we click on the '=' button, the onclick() shows the sum results on the calculator screen. -->
+                    <input class="opreator" type="button" value="="
+                        onclick="form1.answer.value = eval(form1.answer.value) ">
+                </div>
+                <br>
+                <!-- Display the Cancel button and erase all data entered by the user. -->
+                <input type="button" value="Clear All" onclick="form1.answer.value = ' ' " id="clear">
+                <br>
+
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>

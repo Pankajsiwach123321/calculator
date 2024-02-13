@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -144,6 +145,7 @@
         outline: 0;
     }
 </style>
+
 <body>
     <section class="min-h-screen flex justify-center items-center">
         <div class="conatiner">
@@ -174,8 +176,7 @@
                     <input class="opreator" type="button" value="/" onclick="addOperator('/')">
                     <input class=" number" type="button" value="0" onclick="form1.answer.value += '0' ">
                     <input class="opreator" type="button" value="." onclick="form1.answer.value += '.' ">
-                    <input class="opreator" type="button" value="="
-                        onclick="form.answer.value = eval(form.answer.value)">
+                    <input class="opreator" type="button" value="=" onclick="sum()">
                 </div>
                 <br>
                 <div class=" flex justify-between items-center">
@@ -197,6 +198,13 @@
                 document.getElementById('calc').value += operator;
             }
         }
+        function sum() {
+            const answers = document.getElementById('calc')
+            if (answers.value !== '') {
+                answers.value = eval(answers.value)
+            }
+        }
     </script>
 </body>
+
 </html>

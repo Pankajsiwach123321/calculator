@@ -168,25 +168,25 @@
                     <input class="number" type="button" value="1" onclick="form1.answer.value += '1' ">
                     <input class="number" type="button" value="2" onclick="form1.answer.value += '2' ">
                     <input class="number" type="button" value="3" onclick="form1.answer.value += '3' ">
-                    <input class="opreator" type="button" value="+" onclick="form1.answer.value += '+' ">
+                    <input class="opreator" type="button" value="+" onclick="addOperator('+')">
                 </div>
                 <br> <br>
                 <div class=" flex items-center justify-between">
                     <input class="number" type="button" value="4" onclick="form1.answer.value += '4' ">
                     <input class="number" type="button" value="5" onclick="form1.answer.value += '5' ">
                     <input class="number" type="button" value="6" onclick="form1.answer.value += '6' ">
-                    <input class="opreator" type="button" value="-" onclick="form1.answer.value += '-' ">
+                    <input class="opreator" type="button" value="-" onclick="addOperator('-')">
                 </div>
                 <br> <br>
                 <div class=" flex items-center justify-between">
                     <input class="number" type="button" value="7" onclick="form1.answer.value += '7' ">
                     <input class="number" type="button" value="8" onclick="form1.answer.value += '8' ">
                     <input class="number" type="button" value="9" onclick="form1.answer.value += '9' ">
-                    <input class="opreator" type="button" value="*" onclick="form1.answer.value += '*' ">
+                    <input class="opreator" type="button" value="*" onclick="addOperator('*')">
                 </div>
                 <br> <br>
                 <div class=" flex items-center justify-between">
-                    <input class="opreator" type="button" value="/" onclick="form1.answer.value +=  '/' ">
+                    <input class="opreator" type="button" value="/" onclick="addOperator('/')">
                     <input class=" number" type="button" value="0" onclick="form1.answer.value += '0' ">
                     <input class="opreator" type="button" value="." onclick="form1.answer.value += '.' ">
                     <!-- When we click on the '=' button, the onclick() shows the sum results on the calculator screen. -->
@@ -206,6 +206,16 @@
             </form>
         </div>
     </section>
+    <script>
+        function addOperator(operator) {
+            const lastCharacter = document.getElementById('calc').value.slice(-1);
+            if (isNaN(lastCharacter) && lastCharacter !== ')') {
+                document.getElementById('calc').value = document.getElementById('calc').value.slice(0, -1) + operator;
+            } else {
+                document.getElementById('calc').value += operator;
+            }
+        }
+    </script>
 </body>
 
 </html>

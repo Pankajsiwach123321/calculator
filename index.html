@@ -188,15 +188,21 @@
                 <br>
             </form>
         </div>
+        <button onclick="window.print()">hello</button>
     </section>
     <script>
         function addOperator(operator) {
             const lastCharacter = document.getElementById('calc').value.slice(-1);
+            const answers = document.getElementById('calc')
+
             if (isNaN(lastCharacter) && lastCharacter !== ')') {
                 document.getElementById('calc').value = document.getElementById('calc').value.slice(0, -1) + operator;
-            } else {
-                document.getElementById('calc').value += operator;
+
             }
+            else if (answers.value != ''){
+
+                document.getElementById('calc').value += operator;
+            }  
         }
         function sum() {
             const answers = document.getElementById('calc')
